@@ -40,7 +40,7 @@ class FloatingWidget(QWidget):
                          self.height())
 
         # 加载图标
-        self.icon_pixmap = QPixmap('bin/icon.ico').scaled(self.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        self.icon_pixmap = QPixmap(bin_path + '/icon.ico').scaled(self.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation)
 
         # 设置悬浮球的样式（背景色通过paintEvent设置）
         self.setStyleSheet("border-radius: {0}px;".format(self.corner_radius))
@@ -93,7 +93,7 @@ class SEEWO_Tools():
         MenuItem('退出程序',lambda:self.exitProgram())
         )
 
-        self.icon.icon = Image.open('icon.ico')
+        self.icon.icon = Image.open(bin_path + '/icon.ico')
 
         self.icon.menu = menu
         self.icon.run()
